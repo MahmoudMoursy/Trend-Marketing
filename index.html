@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الحملات الممولة | تيك توك & سناب شات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        :root {
+            --primary-color: #3a3a8c;
+            --secondary-color: #ff6b6b;
+            --accent-color: #a2c4ff;
+            --text-color: #ffffff;
+            --highlight-gradient: linear-gradient(to left, #ff6b6b, #ff8e8e);
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-align: center;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 10% 20%, rgba(90, 90, 170, 0.4) 0%, rgba(58, 58, 140, 1) 90%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            margin: 40px 0;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--highlight-gradient);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .highlight-box {
+            background: var(--highlight-gradient);
+            border-radius: 30px;
+            padding: 20px 30px;
+            margin: 40px auto;
+            max-width: 500px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: var(--box-shadow);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: right;
+            margin: 50px auto;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-item {
+            margin: 15px 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .feature-item:hover {
+            transform: translateX(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .emoji {
+            font-size: 28px;
+            margin-left: 15px;
+            display: inline-block;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: #333;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: var(--box-shadow);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
+        .illustration {
+            margin: 40px auto;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            transition: transform 0.5s ease;
+        }
+
+        .illustration img {
+            width: 300px;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .illustration:hover img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+        }
+
+        .doctor-patient {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .dots-pattern {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .dot:nth-child(2n) {
+            animation-delay: 0.5s;
+        }
+
+        .dot:nth-child(3n) {
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        .contact {
+            margin-top: 60px;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(5px);
+        }
+
+        .phone {
+            font-size: 28px;
+            margin-top: 15px;
+            direction: ltr;
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--highlight-gradient);
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .phone:hover {
+            transform: scale(1.05);
+        }
+
+        .slogan {
+            font-style: italic;
+            margin: 30px 0;
+            color: #f0f0f0;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .slogan::before,
+        .slogan::after {
+            content: '✨';
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .highlight-box {
+                font-size: 20px;
+                padding: 15px 20px;
+            }
+
+            .feature-item {
+                font-size: 16px;
+            }
+
+            .illustration img {
+                width: 200px;
+            }
+        }
+
+        .whatsapp-icon {
+            margin-left: 8px;
+            /* مسافة بين الأيقونة والنص */
+            font-size: 40px;
+            /* حجم الأيقونة */
+            color: #1ba04c;
+            /* اللون الأخضر الخاص بالواتساب */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg-animation" id="bg-animation"></div>
+
+    <div class="container">
+        <div class="header" data-aos="fade-down" data-aos-duration="1000">
+            <h1>إدارة كاملة لحملاتك الإعلانية</h1>
+            <p>خدمة متكاملة بأسلوب حديث.</p>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in" data-aos-duration="800">
+            تسويق رقمي احترافي بنتائج مضمونة
+        </div>
+
+        <div class="features" data-aos="fade-up" data-aos-duration="1000">
+            <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+                <span>🚀 إدارة الحملات الممولة على تيك توك & سناب شات | نتائج مضمونة</span>
+            </div>
+            <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+                <span>✨ نخلي إعلانك يوصل صح للجمهور المستهدف</span>
+            </div>
+            <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
+                <span>📲 متخصصين في حملات سناب شات & تيك توك</span>
+            </div>
+            <div class="feature-item" data-aos="fade-right" data-aos-delay="400">
+                <span>🔥 استهداف دقيق + محتوى جذاب = مبيعات أكثر</span>
+            </div>
+        </div>
+
+        <p class="slogan" data-aos="fade-up" data-aos-duration="800">تسويقك الرقمي يستحق الأفضل...</p>
+
+        <a href="https://wa.me/+966501651797" target="_blank" data-aos="zoom-in" data-aos-duration="800">
+            <button class="cta-button" id="cta-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> تواصل معنا الآن!
+            </button>
+        </a>
+
+        <div class="doctor-patient" data-aos="fade-up" data-aos-duration="1000">
+            <div class="illustration">
+                <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image">
+            </div>
+
+            <div class="dots-pattern">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div class="contact" data-aos="fade-up" data-aos-duration="800">
+            <p>تواصل معنا وبداء رحلتك في التسويق الرقمي</p>
+            <p class="phone">+966501651797</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <script>
+
+        AOS.init({
+            once: false,
+            mirror: true
+        });
+
+
+        function createBackgroundAnimation() {
+            const bgAnimation = document.getElementById('bg-animation');
+            const numberOfElements = 20;
+
+            for (let i = 0; i < numberOfElements; i++) {
+                const span = document.createElement('span');
+                const size = Math.random() * 5 + 3;
+                const posX = Math.floor(Math.random() * window.innerWidth);
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 15 + 10;
+
+                span.style.width = `${size}px`;
+                span.style.height = `${size}px`;
+                span.style.left = `${posX}px`;
+                span.style.bottom = '-10px';
+                span.style.animationDelay = `${delay}s`;
+                span.style.animationDuration = `${duration}s`;
+
+                bgAnimation.appendChild(span);
+            }
+        }
+
+        // تأثير حركي للصورة الرئيسية
+        function addImageAnimation() {
+            const image = document.getElementById('main-image');
+            let rotationDegree = 0;
+            let floatPosition = 0;
+            let direction = 1;
+
+            setInterval(() => {
+                floatPosition += 0.2 * direction;
+                if (floatPosition > 5 || floatPosition < -5) {
+                    direction *= -1;
+                }
+                image.style.transform = `translateY(${floatPosition}px) rotate(${rotationDegree}deg)`;
+                rotationDegree = (rotationDegree + 0.05) % 360;
+            }, 50);
+        }
+
+        // تأثير نبض للزر
+        function addButtonPulse() {
+            const button = document.getElementById('cta-button');
+            let scale = 1;
+            let growing = true;
+
+            setInterval(() => {
+                if (growing) {
+                    scale += 0.001;
+                    if (scale >= 1.03) growing = false;
+                } else {
+                    scale -= 0.001;
+                    if (scale <= 1) growing = true;
+                }
+                button.style.transform = `scale(${scale})`;
+            }, 20);
+        }
+
+        // تنفيذ التأثيرات عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            createBackgroundAnimation();
+            addImageAnimation();
+            addButtonPulse();
+
+            // إعادة تهيئة AOS عند التمرير
+            window.addEventListener('scroll', () => {
+                AOS.refresh();
+            });
+        });
+    </script>
+</body>
+
+</html>
