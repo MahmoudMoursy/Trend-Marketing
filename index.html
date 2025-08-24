@@ -160,6 +160,7 @@
             width: 100%;
             max-width: 600px;
             transition: transform 0.5s ease;
+              right: 80%;
         }
 
         .illustration img {
@@ -167,6 +168,7 @@
             height: auto;
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
             transition: transform 0.5s ease, filter 0.5s ease;
+          
         }
 
         .illustration:hover img {
@@ -174,41 +176,10 @@
             filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
         }
 
-        .doctor-patient {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 50px auto;
-            position: relative;
-            perspective: 1000px;
-        }
+       
 
-        .dots-pattern {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-        }
+       
 
-        .dot {
-            width: 5px;
-            height: 5px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: pulse 2s infinite alternate;
-        }
-
-        .dot:nth-child(2n) {
-            animation-delay: 0.5s;
-        }
-
-        .dot:nth-child(3n) {
-            animation-delay: 1s;
-        }
 
         @keyframes pulse {
             0% {
@@ -312,16 +283,17 @@
             }
 
             .highlight-box {
-                font-size: 20px;
-                padding: 15px 20px;
+                font-size: 10px;
+                padding: 17px 15px;
             }
 
             .feature-item {
                 font-size: 16px;
             }
 
-            .illustration img {
-                width: 200px;
+            .illustration  {
+                width: 50px;
+                right: 70%;
             }
         }
 
@@ -339,41 +311,26 @@
     <div class="bg-animation" id="bg-animation"></div>
 
     <div class="container">
-        <div class="header" data-aos="fade-down" data-aos-duration="1000">
-            <h1>إدارة كاملة لحملاتك الإعلانية</h1>
-            <p>خدمة متكاملة بأسلوب حديث.</p>
+        
+        <div style="display: flex; align-items: center; justify-content: center; position: relative;">
+
+            <div class="illustration" style="position: absolute; left: 0; " >
+                <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image"
+                    style="width:80px;">
+            </div>
+
+            <div class="highlight-box" data-aos="zoom-in" data-aos-duration="800">
+                تسويق رقمي احترافي بنتائج مضمونة
+            </div>
         </div>
 
-        <div class="highlight-box" data-aos="zoom-in" data-aos-duration="800">
-            تسويق رقمي احترافي بنتائج مضمونة
-        </div>
-        <p class="slogan" data-aos="fade-up" data-aos-duration="800">تسويقك الرقمي يستحق الأفضل...</p>
+
 
         <a href="https://wa.me/+966501651797" target="_blank" data-aos="zoom-in" data-aos-duration="800">
             <button class="cta-button" id="cta-button">
                 <i class="fab fa-whatsapp whatsapp-icon"></i> تواصل معنا الآن!
             </button>
         </a>
-
-       <div class="doctor-patient" data-aos="fade-up" data-aos-duration="1000">
-            <div class="illustration">
-                <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image">
-            </div>
-
-            <div class="dots-pattern">
-
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                
-            </div>
-        </div>
         <div class="features" data-aos="fade-up" data-aos-duration="1000">
             <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
                 <span>🚀 إدارة الحملات الممولة على تيك توك & سناب شات | نتائج مضمونة</span>
@@ -389,12 +346,12 @@
             </div>
         </div>
 
-        
- 
+
+
 
         <div class="contact" data-aos="fade-up" data-aos-duration="800">
-            <p>تواصل معنا وبداء رحلتك في التسويق الرقمي</p>
-           
+            <p>تواصل معنا  وابداء رحلتك في التسويق الرقمي</p>
+
         </div>
     </div>
 
