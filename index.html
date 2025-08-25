@@ -66,7 +66,7 @@
             background: var(--highlight-gradient);
             border-radius: 30px;
             padding: 15px 20px;
-            margin: 40px auto;
+            margin: 0px auto;
             max-width: 400px;
             font-size: 20px;
             font-weight: bold;
@@ -85,7 +85,7 @@
             flex-direction: column;
             align-items: flex-start;
             text-align: right;
-            margin: 50px auto;
+            margin: 5px auto;
             max-width: 700px;
             background-color: rgba(255, 255, 255, 0.05);
             padding: 20px;
@@ -125,7 +125,7 @@
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            margin: 30px 0;
+            margin: 10px 0;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -155,7 +155,7 @@
         }
 
         .illustration {
-            margin: 40px auto;
+            margin: 10px auto;
             position: relative;
             width: 100%;
             max-width: 600px;
@@ -164,8 +164,9 @@
         }
 
         .illustration img {
-            width: 180px;
+            width: 170px;
             height: auto;
+            padding-top: 90px;
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
             transition: transform 0.5s ease, filter 0.5s ease;
 
@@ -204,37 +205,8 @@
             backdrop-filter: blur(5px);
         }
 
-        .phone {
-            font-size: 28px;
-            margin-top: 15px;
-            direction: ltr;
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--highlight-gradient);
-            border-radius: 15px;
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
-        }
 
-        .phone:hover {
-            transform: scale(1.05);
-        }
 
-        .slogan {
-            font-style: italic;
-            margin: 30px 0;
-            color: #f0f0f0;
-            font-size: 18px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .slogan::before,
-        .slogan::after {
-            content: '✨';
-            margin: 0 10px;
-            opacity: 0.7;
-        }
 
 
         .bg-animation {
@@ -291,26 +263,39 @@
             .feature-item {
                 font-size: 16px;
             }
+            .cta-button {
+            background-color: var(--accent-color);
+            color: #333;
+            border: none;
+            border-radius: 30px;
+            padding: 7px 10px;
+            font-size: 15px;
+            margin-left: 40px;
+            
+        }
+
 
             .illustration {
                 width: 50px;
                 right: 70%;
             }
-             .illustration img {
-            width: 60px;
-            height: auto;
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
-            transition: transform 0.5s ease, filter 0.5s ease;
 
-        }
+            .illustration img {
+                width: 60px;
+                height: auto;
+                padding-top: 0px;
+                filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+                transition: transform 0.5s ease, filter 0.5s ease;
+
+            }
+          
         }
 
         .whatsapp-icon {
             margin-left: 8px;
-            font-size: 40px;
+            font-size: 30px;
             color: #1ba04c;
         }
-
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <script type='text/javascript'>
@@ -339,8 +324,7 @@
         <div style="display: flex; align-items: center; justify-content: center; position: relative;">
 
             <div class="illustration" style="position: absolute; left: 0; ">
-                <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image"
-                    >
+                <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image">
             </div>
 
             <div class="highlight-box" data-aos="zoom-in" data-aos-duration="800">
