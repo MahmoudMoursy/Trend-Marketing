@@ -65,10 +65,10 @@
         .highlight-box {
             background: var(--highlight-gradient);
             border-radius: 30px;
-            padding: 20px 30px;
+            padding: 15px 20px;
             margin: 40px auto;
-            max-width: 500px;
-            font-size: 24px;
+            max-width: 400px;
+            font-size: 20px;
             font-weight: bold;
             box-shadow: var(--box-shadow);
             transform-style: preserve-3d;
@@ -86,9 +86,9 @@
             align-items: flex-start;
             text-align: right;
             margin: 50px auto;
-            max-width: 900px;
+            max-width: 700px;
             background-color: rgba(255, 255, 255, 0.05);
-            padding: 30px;
+            padding: 20px;
             border-radius: 20px;
             box-shadow: var(--box-shadow);
             backdrop-filter: blur(5px);
@@ -121,8 +121,8 @@
             color: #333;
             border: none;
             border-radius: 30px;
-            padding: 15px 40px;
-            font-size: 20px;
+            padding: 10px 30px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             margin: 30px 0;
@@ -160,15 +160,15 @@
             width: 100%;
             max-width: 600px;
             transition: transform 0.5s ease;
-              right: 80%;
+            right: 80%;
         }
 
         .illustration img {
-            width: 300px;
+            width: 190px;
             height: auto;
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
             transition: transform 0.5s ease, filter 0.5s ease;
-          
+
         }
 
         .illustration:hover img {
@@ -176,9 +176,9 @@
             filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
         }
 
-       
 
-       
+
+
 
 
         @keyframes pulse {
@@ -195,9 +195,9 @@
 
         .contact {
             margin-top: 60px;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
-            padding: 30px;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: var(--box-shadow);
@@ -292,10 +292,17 @@
                 font-size: 16px;
             }
 
-            .illustration  {
+            .illustration {
                 width: 50px;
                 right: 70%;
             }
+             .illustration img {
+            width: 60px;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+            transition: transform 0.5s ease, filter 0.5s ease;
+
+        }
         }
 
         .whatsapp-icon {
@@ -303,8 +310,24 @@
             font-size: 40px;
             color: #1ba04c;
         }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script type='text/javascript'>
+        (function (e, t, n) {
+            if (e.snaptr) return; var a = e.snaptr = function () { a.handleRequest ? a.handleRequest.apply(a, arguments) : a.queue.push(arguments) };
+            a.queue = []; var s = 'script'; r = t.createElement(s); r.async = !0;
+            r.src = n; var u = t.getElementsByTagName(s)[0];
+            u.parentNode.insertBefore(r, u);
+        })(window, document,
+            'https://sc-static.net/scevent.min.js');
+
+        snaptr('init', '60e57e24-1684-4eab-83a8-abe6397c1734', {});
+
+        snaptr('track', 'PAGE_VIEW');
+
+    </script>
+
 </head>
 
 <body>
@@ -312,12 +335,12 @@
     <div class="bg-animation" id="bg-animation"></div>
 
     <div class="container">
-        
+
         <div style="display: flex; align-items: center; justify-content: center; position: relative;">
 
-            <div class="illustration" style="position: absolute; left: 0; " >
+            <div class="illustration" style="position: absolute; left: 0; ">
                 <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="تسويق رقمي" id="main-image"
-                    style="width:80px;">
+                    >
             </div>
 
             <div class="highlight-box" data-aos="zoom-in" data-aos-duration="800">
@@ -351,7 +374,7 @@
 
 
         <div class="contact" data-aos="fade-up" data-aos-duration="800">
-            <p>تواصل معنا  وابداء رحلتك في التسويق الرقمي</p>
+            <p>تواصل معنا وابداء رحلتك في التسويق الرقمي</p>
 
         </div>
     </div>
